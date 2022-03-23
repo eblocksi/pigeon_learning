@@ -5,10 +5,10 @@ using UnityEngine;
 public class SpawnTargets : MonoBehaviour
 {
     [Header("People")]
-    [SerializeField] List<GameObject> people;
+    [SerializeField] List<string> peopleTags;
 
     [Header("Cars")]
-    [SerializeField] List<GameObject> cars;
+    [SerializeField] List<string> carTags;
 
     [Header("General")]
     public float minSpawnTime = .5f;
@@ -18,8 +18,6 @@ public class SpawnTargets : MonoBehaviour
     public float carX = 0f;
 
     private float spawnTime;
-    private bool isCar;
-    
     public bool isLooping;
 
     // Const
@@ -39,10 +37,26 @@ public class SpawnTargets : MonoBehaviour
             Debug.Log("spawnLane 1: " + spawnLane.Item1 + " - 2: " + spawnLane.Item2);
             Debug.Log("spawnlane 3: " + spawnLane.Item3 + " - 4: " + spawnLane.Item4);
             if (spawnLane.Item4 == 0)
-                Instantiate(people[spawnIndex], transform.position + new Vector3(spawnLane.Item1, spawnLane.Item2, 0), transform.rotation);
+            {
+                GameObject _person = ObjectPool.SharedInstance.GetPooledObject(peopleTags[spawnIndex]);
+                if (_person != null)
+                {
+                    Debug.Log("Person is not null");
+                    _person.transform.position = new Vector3(spawnLane.Item1, northYStartCoord,0);
+                    _person.SetActive(true);
+                }
+            }
+            //Instantiate(peopleTags[spawnIndex], transform.position + new Vector3(spawnLane.Item1, northYStartCoord, 0), transform.rotation);
             else
-                Instantiate(cars[spawnIndex], transform.position + new Vector3(spawnLane.Item1, spawnLane.Item2, 0), transform.rotation);
-
+            //Instantiate(carTags[spawnIndex], transform.position + new Vector3(spawnLane.Item1, northYStartCoord, 0), transform.rotation);
+            {
+                GameObject _car = ObjectPool.SharedInstance.GetPooledObject(carTags[spawnIndex]);
+                if (_car != null)
+                {
+                    _car.transform.position = new Vector2(spawnLane.Item1, northYStartCoord);
+                    _car.SetActive(true);
+                }
+            }
             spawnTime = GetSpawnTime();
 
             yield return new WaitForSeconds(spawnTime);
@@ -57,18 +71,15 @@ public class SpawnTargets : MonoBehaviour
         // People Left Lane
         if (randX <= 5)
         {
-            isCar = false;
-            return (peopleLeftLaneX, northYStartCoord, people.Count, 0);
+            return (peopleLeftLaneX, northYStartCoord, peopleTags.Count, 0);
         }
         // People Right Lane
         if (randX <= 10)
         {
-            isCar = false;
-            return (peopleRightLaneX, northYStartCoord, people.Count, 0);
+            return (peopleRightLaneX, northYStartCoord, peopleTags.Count, 0);
         }
         // Car
-        isCar = true;
-        return (carX, northYStartCoord, cars.Count, 1);
+        return (carX, northYStartCoord, carTags.Count, 1);
     }
 
 
@@ -76,10 +87,4 @@ public class SpawnTargets : MonoBehaviour
     {
         return Random.Range(minSpawnTime, maxSpawnTime);
     }    
-
-
-    public bool IsCar()
-    {
-        return isCar;
-    }
 }

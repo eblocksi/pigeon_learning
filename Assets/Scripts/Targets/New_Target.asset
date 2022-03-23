@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6613a886c21f488c5c8d86352b9f9, type: 3}
   m_Name: New_Target
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  startX: 0
-  numberOfPrefabsToCreate: 0
+  numberOfPrefabsToCreate: 30
   spawnPoints:
   - {x: -6.75, y: 0}
   - {x: 0, y: 0}
   - {x: 6.75, y: 0}
+  prefabs:
+  - {fileID: 8491935183622625409, guid: 7312f2db01a9ce245880bde7adcb0780, type: 3}
+  - {fileID: 8491935183622625409, guid: 5b16e47b7c8f13d4d861354b9ae3fb44, type: 3}
+  - {fileID: 8491935183622625409, guid: 194b17d8f8ea6a842badd5489712d3c1, type: 3}
+  - {fileID: 8491935183622625409, guid: 7933f1cb5af2cc74ab7feae48a57e592, type: 3}
+  - {fileID: 8491935183622625409, guid: 9351b825fb0258741b559340fe7d5cb6, type: 3}

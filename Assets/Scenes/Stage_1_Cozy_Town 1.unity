@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 66847989}
   - component: {fileID: 66847988}
   m_Layer: 0
-  m_Name: Pool Object Pool
+  m_Name: Poop Object Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,9 +227,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a016d767a5793041a89b791ec671f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsToPool:
+  - objectToPool: {fileID: 3227294551660343201, guid: 04bf01668b508b441ae30bf63691dfeb, type: 3}
+    amountToPool: 1
+    shouldExpand: 0
+  - objectToPool: {fileID: 8491935183622625409, guid: 7312f2db01a9ce245880bde7adcb0780, type: 3}
+    amountToPool: 10
+    shouldExpand: 0
+  - objectToPool: {fileID: 8491935183622625409, guid: 5b16e47b7c8f13d4d861354b9ae3fb44, type: 3}
+    amountToPool: 10
+    shouldExpand: 0
+  - objectToPool: {fileID: 8491935183622625409, guid: 194b17d8f8ea6a842badd5489712d3c1, type: 3}
+    amountToPool: 10
+    shouldExpand: 0
+  - objectToPool: {fileID: 8491935183622625409, guid: 7933f1cb5af2cc74ab7feae48a57e592, type: 3}
+    amountToPool: 10
+    shouldExpand: 0
+  - objectToPool: {fileID: 8491935183622625409, guid: 9351b825fb0258741b559340fe7d5cb6, type: 3}
+    amountToPool: 10
+    shouldExpand: 0
   pooledObjects: []
-  objectToPool: {fileID: 3227294551660343201, guid: 04bf01668b508b441ae30bf63691dfeb, type: 3}
-  amountToPool: 5
 --- !u!4 &66847989
 Transform:
   m_ObjectHideFlags: 0
@@ -607,54 +624,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1167148505}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &733524573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 733524574}
-  - component: {fileID: 733524575}
-  m_Layer: 0
-  m_Name: Person Object Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &733524574
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733524573}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1167148505}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &733524575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733524573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a016d767a5793041a89b791ec671f2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectToPool: {fileID: 8491935183622625409, guid: 7312f2db01a9ce245880bde7adcb0780, type: 3}
-  amountToPool: 0
 --- !u!1 &784559144
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1167148505}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167148504
 GameObject:
@@ -839,7 +810,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 66847989}
-  - {fileID: 733524574}
   - {fileID: 1697964323}
   - {fileID: 792429898}
   - {fileID: 384910836}
@@ -956,7 +926,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1167148505}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1751150142
 GameObject:
@@ -1391,7 +1361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
       propertyPath: cars.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
       propertyPath: peopleLeftLaneX
@@ -1403,7 +1373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
       propertyPath: people.Array.size
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: carTags.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
       propertyPath: cars.Array.data[0]
@@ -1432,7 +1406,7 @@ PrefabInstance:
     - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
       propertyPath: people.Array.data[0]
       value: 
-      objectReference: {fileID: 8491935183622625409, guid: 7312f2db01a9ce245880bde7adcb0780, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
       propertyPath: people.Array.data[1]
       value: 
@@ -1449,6 +1423,34 @@ PrefabInstance:
       propertyPath: people.Array.data[4]
       value: 
       objectReference: {fileID: 8491935183622625409, guid: 9351b825fb0258741b559340fe7d5cb6, type: 3}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: carTags.Array.data[0]
+      value: Person1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: peopleTags.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: peopleTags.Array.data[0]
+      value: Person1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: peopleTags.Array.data[1]
+      value: Person2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: peopleTags.Array.data[2]
+      value: Person3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: peopleTags.Array.data[3]
+      value: Person4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283250552581800345, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
+      propertyPath: peopleTags.Array.data[4]
+      value: Person5
+      objectReference: {fileID: 0}
     - target: {fileID: 8283250552844201578, guid: e2d7bcd008e97ca43923624d74dc974d, type: 3}
       propertyPath: levels.Array.data[0]
       value: 

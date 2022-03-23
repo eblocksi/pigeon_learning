@@ -14,7 +14,7 @@ public class People : MonoBehaviour
     private bool isKilled;
     
 
-    private void Start()
+    private void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
@@ -26,7 +26,7 @@ public class People : MonoBehaviour
         rb.velocity = new Vector2(0, personMoveSpeed * Time.deltaTime);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (player != null)
         {
@@ -39,6 +39,6 @@ public class People : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

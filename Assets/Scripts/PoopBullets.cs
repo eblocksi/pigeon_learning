@@ -63,6 +63,7 @@ public class PoopBullets : MonoBehaviour
             PlayNormalDeath();
             Destroy(other.gameObject);
             sprite.sortingLayerName = "Poop";
+            isDone = false;
             gameObject.SetActive(false);
         }
     }
@@ -71,6 +72,7 @@ public class PoopBullets : MonoBehaviour
     private void OnBecameInvisible()
     {
         sprite.sortingLayerName = "Poop";
+        isDone = false;
         gameObject.SetActive(false);
     }
 

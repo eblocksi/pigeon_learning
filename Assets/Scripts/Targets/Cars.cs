@@ -25,7 +25,7 @@ public class Cars : MonoBehaviour
         rb.velocity = new Vector2(0, carMoveSpeed * Time.deltaTime);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (player != null)
         {
@@ -38,6 +38,6 @@ public class Cars : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

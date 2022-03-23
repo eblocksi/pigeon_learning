@@ -7,8 +7,13 @@ TagManager:
   - Poop
   - Ground
   - Background
-  - Enemy
   - PowerUp
+  - Undefined
+  - Person1
+  - Person2
+  - Person3
+  - Person4
+  - Person5
   layers:
   - Default
   - TransparentFX

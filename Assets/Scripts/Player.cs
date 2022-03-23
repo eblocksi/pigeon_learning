@@ -19,46 +19,13 @@ public class Player : MonoBehaviour
     //Firing
     public void Poop()
     {
-        GameObject _poop = ObjectPool.SharedInstance.GetPooledObject();
+        GameObject _poop = ObjectPool.SharedInstance.GetPooledObject("Poop");
         if (_poop != null)
         {
             audioPlayer.PlayPoopingClip();
             _poop.transform.position = poopGun.transform.position;
             _poop.transform.rotation = poopGun.transform.rotation;
-            _poop.tag = "Poop";
             _poop.SetActive(true);
         }
-        //GameObject _poop = Instantiate(bulletPoop, poopGun.position, transform.rotation);
-        //_poop.tag = "Poop";
     }
 }
-//private void Update()
-    //{
-    //    //InitBounds();
-    //    //Move();
-    //}
-
-
-    // Old movement style with keyboard
-    //private void Move()
-    //{
-    //    Vector2 delta = rawInput * moveSpeed * Time.deltaTime;
-    //    Vector2 newPos = new Vector2();
-
-    //    newPos.x = Mathf.Clamp(transform.position.x + delta.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
-    //    newPos.y = Mathf.Clamp(transform.position.y + delta.y, minBounds.y + paddingBottom, maxBounds.y - paddingTop);
-    //    transform.position = newPos;
-    //}
-
-    //private void OnMove(InputValue value)
-    //{
-    //    rawInput = value.Get<Vector2>();
-    //}
-
-    //void InitBounds()
-    //{
-    //    Camera mainCamera = Camera.main;
-
-    //    minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
-    //    maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
-    //}

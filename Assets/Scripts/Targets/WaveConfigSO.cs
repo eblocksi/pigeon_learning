@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Target SO", fileName = "New_Target")]
 public class WaveConfigSO : ScriptableObject
 {
-    public float moveSpeed;
     public int numberOfPrefabsToCreate;
     public Vector2[] spawnPoints;
+    public GameObject[] prefabs;
 
-
+    
     
 }
 
