@@ -20,9 +20,14 @@ public class PoopBullets : MonoBehaviour
     // After the poop is completed moves the poop to a sorting layer below the targets
     private SpriteRenderer sprite;
 
+    private List<string> enemyTags;
+    private SpawnTargets spawnTargets;
+
     private void Awake()
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        spawnTargets = FindObjectOfType<SpawnTargets>();
+        enemyTags = spawnTargets.GetTags();
     }
     private void Start()
     {
@@ -57,11 +62,11 @@ public class PoopBullets : MonoBehaviour
     {
         if (Time.time - poopTime > 0.1f) { return; }
 
-        if (other.gameObject.CompareTag("Enemy") && isDone)
+        if (enemyTags.Contains(other.tag) && isDone)
         {
             audioPlayer.PlayGettingHitClip();
             PlayNormalDeath();
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             sprite.sortingLayerName = "Poop";
             isDone = false;
             gameObject.SetActive(false);

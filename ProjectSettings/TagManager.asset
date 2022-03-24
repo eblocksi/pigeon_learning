@@ -14,6 +14,12 @@ TagManager:
   - Person3
   - Person4
   - Person5
+  - Enemy
+  - Car1
+  - Car2
+  - Car3
+  - Car4
+  - Car5
   layers:
   - Default
   - TransparentFX

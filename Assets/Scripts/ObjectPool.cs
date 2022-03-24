@@ -24,7 +24,7 @@ public class ObjectPool : MonoBehaviour
     private void Start()
     {
         pooledObjects = new List<GameObject>();
-        
+
         foreach (ObjectPoolItem item in itemsToPool)
         {
             for (int i = 0; i < item.amountToPool; i++)
