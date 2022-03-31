@@ -17,7 +17,11 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip menuSelectClip;
     [SerializeField][Range(0f, 1f)] float menuSelectVolume = 1f;
 
-    static AudioPlayer instance;
+    [Header("GameOver")]
+    [SerializeField] AudioClip gameOverClip;
+    [SerializeField][Range(0f, 1f)] float gameOverVolume = 1f;
+
+    private static AudioPlayer instance;
     private AudioSource audioSource;
 
     private void Awake()
@@ -28,14 +32,14 @@ public class AudioPlayer : MonoBehaviour
 
     private void ManageSingleton()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
             gameObject.SetActive(false);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         else
         {
-            instance = this;
+            instance = FindObjectOfType<AudioPlayer>();
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -54,6 +58,12 @@ public class AudioPlayer : MonoBehaviour
     {
         audioSource.Stop();
         PlayClip(menuSelectClip, menuSelectVolume);
+    }
+
+    public void PlayGameOver()
+    {
+        audioSource.Stop();
+        PlayClip(gameOverClip, gameOverVolume);
     }
 
     private void PlayClip(AudioClip clip, float volume)

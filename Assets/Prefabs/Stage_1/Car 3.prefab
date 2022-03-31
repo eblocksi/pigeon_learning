@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8491935183622625411}
   - component: {fileID: 8491935183622625436}
   - component: {fileID: 8491935183622625408}
-  - component: {fileID: -4915950974366490772}
+  - component: {fileID: 8501385650104914408}
+  - component: {fileID: 4771488020488508309}
   m_Layer: 0
   m_Name: Car 3
   m_TagString: Car3
@@ -122,7 +123,103 @@ CircleCollider2D:
   m_Offset: {x: -0.008251309, y: -0.0033841133}
   serializedVersion: 2
   m_Radius: 0.8412795
---- !u!114 &-4915950974366490772
+--- !u!82 &8501385650104914408
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491935183622625409}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7688828244659684655, guid: 0336119b097660049926b961f85b67cb, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 901d232345844d54891b413a925ca925, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &4771488020488508309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +228,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8491935183622625409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5997565a8c367b41b95f298d9bea53d, type: 3}
+  m_Script: {fileID: 11500000, guid: fe5b0c6e5a16a6746a0a0d5b0eecf98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carMoveSpeed: -100
+  moveSpeed: -100
+  points: 25
+  gettingHitClip: {fileID: 8300000, guid: 901d232345844d54891b413a925ca925, type: 3}

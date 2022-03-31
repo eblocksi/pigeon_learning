@@ -39,13 +39,14 @@ public class SpawnTargets : MonoBehaviour
         do
         {
             float spawnLane = GetSpawnLane();
-            
+
             //Debug.Log("spawnLane 1: " + spawnLane.Item1 + " - 2: " + spawnLane.Item2);
             //Debug.Log("spawnlane 3: " + spawnLane.Item3 + " - 4: " + spawnLane.Item4);
+            Debug.Log("is it a car: " + isCar);
             if (isCar)
             {
                 int rnd = Random.Range(0, carTags.Count);
-                GameObject _car = ObjectPool.SharedInstance.GetPooledObject(carTags[rnd]);
+                GameObject _car = ObjectPooler.SharedInstance.GetPooledObject(carTags[rnd]);
 
                 if (_car != null)
                 {
@@ -57,7 +58,7 @@ public class SpawnTargets : MonoBehaviour
             else
             {
                 int rnd = Random.Range(0, peopleTags.Count);
-                GameObject _person = ObjectPool.SharedInstance.GetPooledObject(peopleTags[rnd]);
+                GameObject _person = ObjectPooler.SharedInstance.GetPooledObject(peopleTags[rnd]);
 
                 if (_person != null)
                 {
@@ -66,7 +67,6 @@ public class SpawnTargets : MonoBehaviour
                 }
             }
             spawnTime = GetSpawnTime();
-
             yield return new WaitForSeconds(spawnTime);
         } while (isLooping);
 

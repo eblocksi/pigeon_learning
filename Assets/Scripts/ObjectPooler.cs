@@ -1,6 +1,6 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 [System.Serializable]
 
@@ -10,29 +10,31 @@ public class ObjectPoolItem
     public int amountToPool;
     public bool shouldExpand;
 }
-public class ObjectPool : MonoBehaviour
+
+public class ObjectPooler : MonoBehaviour
 {
-    public static ObjectPool SharedInstance;
+
+    public static ObjectPooler SharedInstance;
     public List<ObjectPoolItem> itemsToPool;
     public List<GameObject> pooledObjects;
 
-    private void Awake()
+    void Awake()
     {
         SharedInstance = this;
     }
 
-    private void Start()
+    // Use this for initialization
+    void Start()
     {
         pooledObjects = new List<GameObject>();
-
         foreach (ObjectPoolItem item in itemsToPool)
         {
             for (int i = 0; i < item.amountToPool; i++)
             {
                 GameObject obj = (GameObject)Instantiate(item.objectToPool);
                 obj.SetActive(false);
-                pooledObjects.Add(obj);
                 obj.transform.parent = transform;
+                pooledObjects.Add(obj);
             }
         }
     }

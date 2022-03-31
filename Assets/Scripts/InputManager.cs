@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
     public float moveSpeed;
     public float tapTime = 0.2f;
     public float tapDistance = 50f;
+    public float swipeUpDistance = 100f;
 
     // Used to measure how long the finger was pressed
     private float startTime;
@@ -73,14 +74,19 @@ public class InputManager : MonoBehaviour
     private void EndTouch(InputAction.CallbackContext ctx)
     {
         //Debug.Log("End touch at: " + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
-        endPosition = touchControls.Touch.TouchPosition.ReadValue<Vector2>();
-        if ((float)ctx.time - startTime > tapTime && Mathf.Abs(startPosition.x - endPosition.x) > tapDistance)
+        if (!player.isDead)
         {
-            if (!changingLanes)
-                Move();
+            endPosition = touchControls.Touch.TouchPosition.ReadValue<Vector2>();
+            if (Mathf.Abs(endPosition.y - startPosition.y) > swipeUpDistance)
+                player.Shoot();
+            else if ((float)ctx.time - startTime > tapTime && Mathf.Abs(startPosition.x - endPosition.x) > tapDistance)
+            {
+                if (!changingLanes)
+                    Move();
+            }
+            else
+                player.Poop();
         }
-        else
-            player.Poop();
     }
 
     private void Move()

@@ -20,6 +20,12 @@ TagManager:
   - Car3
   - Car4
   - Car5
+  - CrowBro
+  - CrowBro1
+  - PoopAttack
+  - Enemy_Basic
+  - Enemy_Attack1
+  - AudioObject
   layers:
   - Default
   - TransparentFX

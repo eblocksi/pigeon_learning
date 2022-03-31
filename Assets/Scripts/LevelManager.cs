@@ -19,7 +19,6 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadFirstLevel()
     {
-        audioPlayer.
         StartCoroutine(WaitAndLoad(1, mainMenuClickDelay)); ;
         audioPlayer.PlayMenuSelectClip();
     }
@@ -31,7 +30,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadGameOver()
     {
-        StartCoroutine(WaitAndLoad(SceneManager.sceneCount - 1, sceneLoadDelay));
+        StartCoroutine(WaitAndLoad(3, 2f));
+        audioPlayer.PlayGameOver();
     }
 
     IEnumerator WaitAndLoad(int sceneIndex, float delay)
